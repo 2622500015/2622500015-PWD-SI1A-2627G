@@ -44,7 +44,8 @@
       main {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 20px;
+      padding: 20px;
       }
 
       section {
@@ -55,7 +56,7 @@
         background-color: #ffffff;
         border: 1px solid #d0d7de;
         padding: 20px;
-        margin: 0:
+        margin: 0;
       }
 
       #home h2 {
