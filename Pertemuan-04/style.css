@@ -44,10 +44,14 @@
       main {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      background-color: #eef2f7;
+      gap: 20px;
+      padding: 20px;
       }
 
       section {
-      width: 100%;
+      width: auto;
+      margin: 0;
       }
       
       #home {
