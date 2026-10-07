@@ -46,6 +46,8 @@
       grid-template-columns: 1fr 1fr;
       gap: 30px;
       width: 100%;
+      min-width: 0;
+      overflow-wrap: break-word;
       }
 
       section {
