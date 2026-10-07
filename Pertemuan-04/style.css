@@ -44,7 +44,8 @@
       main {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 300px;
+      gap: 24px;
+      padding: 20px;
       width: 100%;
       min-width: 0;
       overflow-wrap: break-word;
