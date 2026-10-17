@@ -23,6 +23,13 @@
       font-size: 28px;
       }
 
+      #navMenu.nav-open {
+      display: flex;
+      flex-direction: column;
+      margin-top: 16px;
+      } 
+
+
       nav ul {
       display: flex;
       flex-direction: column;
