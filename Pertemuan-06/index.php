@@ -9,6 +9,8 @@ $semester = 2;
 $ipk = 4.00;
 $statusAktif = true;
 $catatanTambahan = null;
+const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
+const PROFIL_GITHUB = "Muhammad Nabil Farhan Hariry";
 ?>
 <!doctype html>
 <html lang="id">
