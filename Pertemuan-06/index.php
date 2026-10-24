@@ -1,11 +1,14 @@
 ﻿<?php
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
+// Bagian 2: Operator
+$batasSemester = 8;
+$semester = 2;
+$sisaSemester = $batasSemester - $semester;
 $nim = "2622500015";
 $namaMahasiswa = "Muhammad Nabil Farhan Hariry";
 $programStudi = "SI";
 $tahunAkademik = "2026/2027";
-$semester = 2;
 $ipk = 4.00;
 $statusAktif = true;
 $catatanTambahan = null;
@@ -60,6 +63,7 @@ const PROFIL_GITHUB = "2622500015";
       <h2>Tentang Saya</h2>
       <article>
         <h3>Profil Singkat</h3>
+        <p>Sisa semester hingga batas: <?php echo $sisaSemester; ?></p>
         <p>Saya mahasiswa Program Studi Sistem Informasi.</p>
 
         <h3>Target Belajar</h3>
