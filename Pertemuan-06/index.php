@@ -8,14 +8,9 @@
   </head>
   
   <body>
+    <p>Konten HTML Statis.</p>
     <?php
-    // Komentar satu baris.
-    print "Keluaran menggunakan print";
-
-    /* 
-    Komentar beberapa baris.
-    Komentar ini tidak ditampilkan pada halaman.
-    */
+    echo "<p>Konten yang dihasilkan oleh PHP.</p>";
     ?>
     <header>
       <div class="header-top">
