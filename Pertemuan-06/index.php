@@ -1,8 +1,8 @@
 ﻿<?php
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
-$nim = "0344300002";
-$namaMahasiswa = "Yohanes Setiawan Japriadi";
+$nim = "2622500015";
+$namaMahasiswa = "Muhammad Nabil Farhan Hariry";
 $programStudi = "SI";
 $tahunAkademik = "2026/2027";
 $semester = 2;
@@ -96,6 +96,8 @@ switch ($programStudi) {
         <p>Pemeriksaan rentang semester: <?php echo $statusSemester; ?></p>
         <p>IPK: <?php echo number_format($ipk, 2, ',', '.'); ?></p>
         <p>Saya mahasiswa Program Studi Sistem Informasi.</p>
+        <p>Catatan tambahan: <?php echo $catatanTambahan === null ? "Freestyle" : $catatanTambahan;
+        ?></p>
 
         <h3>Target Belajar (Perulangan for)</h3>
         <ol>
@@ -117,7 +119,7 @@ switch ($programStudi) {
                 echo "Menggunakan perulangan for dan while.";
                 break;
               default:
-                echo "Belum dipetakan";
+                echo "Freestyle";
                 break;
             }
             echo "</li>";
