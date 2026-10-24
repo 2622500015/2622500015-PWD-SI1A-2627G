@@ -204,7 +204,7 @@ switch ($programStudi) {
     </main>
 
     <footer>
-      <p>&copy; 2026 Muhammad Nabil Farhan Hariry [2622500015] </p>
+      <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p>
     </footer>
     <hr>
     <a href="../">Kembali Ke Halaman Utama</a>
