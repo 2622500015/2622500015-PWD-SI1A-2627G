@@ -1,21 +1,29 @@
 ﻿<?php
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
-// Bagian 2: Operator
-$batasSemester = 8;
-$semester = 2;
-$sisaSemester = $batasSemester - $semester;
-$statusAktif = true;
-$semesterValid = $semester >= 1 && $semester <= $batasSemester;
-$statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
-$nim = "2622500015";
-$namaMahasiswa = "Muhammad Nabil Farhan Hariry";
+$nim = "0344300002";
+$namaMahasiswa = "Yohanes Setiawan Japriadi";
 $programStudi = "SI";
 $tahunAkademik = "2026/2027";
+$semester = 2;
 $ipk = 4.00;
+$statusAktif = true;
 $catatanTambahan = null;
 const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
 const PROFIL_GITHUB = "2622500015";
+// Bagian 2: Operator
+$batasSemester = 8;
+$sisaSemester = $batasSemester - $semester;
+$semesterValid = $semester >= 1 && $semester <= $batasSemester;
+$statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
+// Bagian 3: Percabangan if-elseif-else
+if ($semester < 3) {
+$keteranganSemester = "Semester awal";
+} elseif ($semester <= 6) {
+$keteranganSemester = "Semester menengah";
+} else {
+$keteranganSemester = "Semester akhir";
+}
 ?>
 <!doctype html>
 <html lang="id">
@@ -67,6 +75,8 @@ const PROFIL_GITHUB = "2622500015";
         <h3>Profil Singkat</h3>
         <p>Sisa semester hingga batas: <?php echo $sisaSemester; ?></p>
         <p>Pemeriksaan rentang semester: <?php echo $statusSemester; ?></p>
+        <p>Semester: <?php echo $semester . " (" . $keteranganSemester . ")"; ?></p>
+        <p>Keterangan semester: <?php echo $keteranganSemester; ?></p>
         <p>Saya mahasiswa Program Studi Sistem Informasi.</p>
 
         <h3>Target Belajar</h3>
