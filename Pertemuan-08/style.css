@@ -77,36 +77,42 @@
       }
       
       #tentang {
-        background-color: #ffffff;
-        border: 1px solid #d0d7de;
+        background-image: url(cafe.png);
+        border: 1px solid #003366;
         padding: 20px;
         margin: 0;
       }
 
       #tentang h2 {
-      color: #003366;
+      color: #ffffff;
       border-bottom: 2px solid #003366;
       padding-bottom: 6px;
       margin-top: 0;
       margin-bottom: 16px;
+      text-align: center;
       }
 
       #tentang p {
+      color: #ffffff;
       line-height: 1.6;
       margin: 0 0 16px;
+      text-align: justify;
       }
 
       #tentang img {
         display: block;
-        width: 240px;
+        width: 100%;
         max-width: 100%;
         height: auto;
-        border: 1px solid #cbd5e1;
+        border: 1px solid #003366;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10px;
       }
 
       #adopt2 {
-       background-color: #ffffff;
-       border: 1px solid #d0d7de;
+       background-image: url(cafe.png);
+       border: 1px solid #003366;
        padding: 20px;
        margin: 0;
        font-family: Arial, sans-serif;
@@ -114,48 +120,58 @@
       }
 
       #adopt2 h2 {
-        color: #1f4e78;
+        color: #ffffff;
         margin-bottom: 16px;
         border-bottom: 2px solid #003366;
         margin-top: 0;
-        padding-bottom: 6px;
-        
+        padding-bottom: 6px;      
+      }
+
+      #adopt2 h3 {
+        color: #ffffff;
+        margin-bottom: 16px;
+        border-bottom: 2px solid #003366;
+        margin-top: 0;
+        padding-bottom: 6px;  
       }
 
       #adopt {
-        background-color: #ffffff;
-        border: 1px solid #d0d7de;
+        background-image: url(cafe.png);
+        border: 1px solid #003366;
         padding: 20px;
         margin: 0;
         font-family: Arial, sans-serif;
       }
 
       #adopt h2 {
-        color: #003366;
+        color: #ffffff;
         border-bottom: 2px solid #003366;
         padding-bottom: 6px;
         margin-top: 0;
         margin-bottom: 16px;
+        text-align: center;
       }
 
       #adopt h3 {
-        color: #1f4e78;
+        color: #ffffff;
         margin-bottom: 6px;
         border-bottom: 2px solid #003366;
       }
 
       #adopt p {
+        color: #ffffff;
         line-height: 1.5;
         margin: 6px 0;
         padding: 6px 0;
-        border-bottom: 1px solid #e6e6e6;
+        border-bottom: 1px solid #003366;
+        text-align: justify;
       }
 
       #adopt ol {
-        color: #333333;
+        color: #ffffff;
         margin: 8px 0;
         padding: 8px 24px;
-        border: 1px solid #e6e6e6;
+        border: 1px solid #003366;
       }
 
       .daftar-kucing {
@@ -166,7 +182,7 @@
       }
 
       .kucing {
-        background: #ffffff;
+        background-image: url(cafe.png);
         padding: 15px;
         border-radius: 12px;
         text-align: center;
@@ -187,11 +203,13 @@
       .kucing p {
         margin: 5px 0;
         text-align: left;
+        color: #ffffff;
       }
 
       #contact {
-        background-color: #f8fafc;
-        border: 1px solid #cbd5e1;
+        color: #ffffff;
+        background-image: url(cafe.png);
+        border: 1px solid #003366;
         padding: 20px;
         margin: 0;
         font-family: Arial, sans-serif;
@@ -199,7 +217,7 @@
       }
 
       #contact h2 {
-        color: #003366;
+        color: #ffffff;
         border-bottom: 2px solid #003366;
         padding-bottom: 6px;
         margin-top: 0;
@@ -211,13 +229,13 @@
       }
 
       #contact label {
-        color: #1f2937;
+        color: #ffffff;
         font-weight: bold;
       }
 
       .input-form {
-        background-color: #ffffff;
-        color: #111827;
+        background-color: #003366;
+        color: #ffffff;
         font-family: Arial, sans-serif;
         font-size: 16px;
         padding: 8px;
@@ -243,7 +261,7 @@
       }
       /* Footer */
       footer {
-      background-color: #003366;
+      background-image: url(cafe.png);
       color: #ffffff;
       text-align: center;
       padding: 14px 20px;
