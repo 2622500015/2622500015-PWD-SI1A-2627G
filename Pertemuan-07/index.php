@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pesanKesalahan .= 'Jenis pesan tidak valid. '; 
   }  
 
-  if (!in_array($prodi, ['SI', 'TI'], true)) {   
+  if (!in_array($prodi, ['SI', 'TI', 'BD'], true)) {   
     $pesanKesalahan .= 'Program studi tidak valid. '; 
   }  
     
@@ -117,7 +117,7 @@ $keteranganSemester = "Semester menengah";
 $keteranganSemester = "Semester akhir";
 }
 $namaProdi = ($programStudi == "SI") ? "Sistem Informasi" : (($programStudi == "TI") ? "Teknik
-Informatika" : "Lainnya");
+Informatika" : (($programStudi == "BD") ? "Bisnis Digital" : "Lainnya"));
 // Bagian 4: Percabangan switch-case-default
 switch ($programStudi) {
   case "SI":
@@ -297,6 +297,51 @@ switch ($programStudi) {
           <button type="reset">Batal</button>
           <p id="formFeedback"></p>
         </form>
+        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
+          <h3>Data yang Diterima Peladen</h3>
+
+          <p>Nama:
+            <?= htmlspecialchars($nama, ENT_QUOTES, 'UTF-8') ?>
+          </p>
+
+          <p>Email:
+            <?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?>
+          </p>
+
+          <p>Semester:
+            <?= htmlspecialchars($semesterForm, ENT_QUOTES, 'UTF-8') ?>
+          </p>
+
+          <p>Tanggal kunjungan:
+            <?= htmlspecialchars($tanggal, ENT_QUOTES, 'UTF-8') ?>
+          </p>
+
+          <p>Jenis pesan:
+            <?= htmlspecialchars($jenisPesan, ENT_QUOTES, 'UTF-8') ?>
+          </p>
+
+          <p>Program studi:
+            <?= htmlspecialchars($prodi, ENT_QUOTES, 'UTF-8') ?>
+          </p>
+
+          <p>Minat:</p>
+
+          <?php if (is_array($minat) && count($minat) > 0): ?>
+            <ul>
+              <?php foreach ($minat as $topik): ?>
+                <li>
+                  <?= htmlspecialchars((string) $topik, ENT_QUOTES, 'UTF-8') ?>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          <?php else: ?>
+            <p>Tidak ada minat yang dipilih.</p>
+          <?php endif; ?>
+
+          <p>Pesan:</p>
+
+          <p><?= nl2br(htmlspecialchars($pesan, ENT_QUOTES, 'UTF-8')) ?></p>
+        <?php endif; ?>
       </section>
     </main>
 
@@ -304,7 +349,7 @@ switch ($programStudi) {
       <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p>
     </footer>
     <hr>
-    <!--<a href="../">Kembali Ke Halaman Utama</a> -->
+    <a href="../">Kembali Ke Halaman Utama</a>
     <script src="script.js"></script>
    </body>
  </html>
