@@ -4,6 +4,7 @@ if (isset($_GET['nama'])) {
     $nama = $_GET['nama']; 
     echo "Nama yang diterima: " . htmlspecialchars($nama, ENT_QUOTES, 'UTF-8'); 
 }
+
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
 $nim = "2622500015";
@@ -14,13 +15,16 @@ $semester = 2;
 $ipk = 4.00;
 $statusAktif = true;
 $catatanTambahan = null;
+
 const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
 const PROFIL_GITHUB = "2622500015";
+
 // Bagian 2: Operator
 $batasSemester = 8;
 $sisaSemester = $batasSemester - $semester;
 $semesterValid = $semester >= 1 && $semester <= $batasSemester;
 $statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
+
 // Bagian 3: Percabangan if-elseif-else
 if ($semester < 3) {
 $keteranganSemester = "Semester awal";
@@ -29,8 +33,10 @@ $keteranganSemester = "Semester menengah";
 } else {
 $keteranganSemester = "Semester akhir";
 }
+
 $namaProdi = ($programStudi == "SI") ? "Sistem Informasi" : (($programStudi == "TI") ? "Teknik
-Informatika" : "Lainnya");
+Informatika" : (($programStudi == "BD") ? "Bisnis Digital" : "Lainnya"));
+
 // Bagian 4: Percabangan switch-case-default
 switch ($programStudi) {
   case "SI":
@@ -39,10 +45,12 @@ switch ($programStudi) {
   case "TI":
     $fokusProgramStudi = "Komputasi dan pengembangan perangkat lunak";
     break;
+  case "BD":
+    $fokusProgramStudi = "Analisis data dan strategi bisnis digital";
+    break;
   default:
     $fokusProgramStudi = "Belum ditentukan";
 }
-
 ?>
 <!doctype html>
 <html lang="id">
