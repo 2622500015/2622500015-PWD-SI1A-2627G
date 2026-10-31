@@ -76,14 +76,14 @@
       margin: 20px;
       }
       
-      #tentang {
+      #profile {
         background-image: url(cafe.png);
         border: 1px solid #003366;
         padding: 20px;
         margin: 0;
       }
 
-      #tentang h2 {
+      #profile h2 {
       color: #ffffff;
       border-bottom: 2px solid #003366;
       padding-bottom: 6px;
@@ -92,14 +92,14 @@
       text-align: center;
       }
 
-      #tentang p {
+      #profile p {
       color: #ffffff;
       line-height: 1.6;
       margin: 0 0 16px;
       text-align: justify;
       }
 
-      #tentang img {
+      #profile img {
         display: block;
         width: 100%;
         max-width: 100%;
@@ -206,7 +206,7 @@
         color: #ffffff;
       }
 
-      #contact {
+      #daftar {
         color: #ffffff;
         background-image: url(cafe.png);
         border: 1px solid #003366;
@@ -216,7 +216,7 @@
         grid-column: 1 / -1;  
       }
 
-      #contact h2 {
+      #daftar h2 {
         color: #ffffff;
         border-bottom: 2px solid #003366;
         padding-bottom: 6px;
@@ -228,7 +228,7 @@
         margin: 12px 0;
       }
 
-      #contact label {
+      #daftar label {
         color: #ffffff;
         font-weight: bold;
       }
@@ -245,12 +245,12 @@
         max-width: 100%;
       }
 
-      #contact textarea {
+      #daftar textarea {
       min-height: 80px;
       resize: vertical;
       }
 
-      #contact button {
+      #daftar button {
         cursor: pointer;
         background-color: #003366;
         color: #ffffff;
@@ -287,7 +287,7 @@
       gap: 16px;
       }
 
-      #contact {
+      #daftar {
       grid-column: 1 / -1;  
       }
     }
