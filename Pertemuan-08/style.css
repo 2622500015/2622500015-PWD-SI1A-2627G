@@ -266,7 +266,18 @@
         margin: 0;
       }
 
+      .daftar-feedback-error {
+      color: #c62828;
+      }
+
+      .daftar-feedback-success {
+      color: #2e7d32;
+      }
+
       @media (min-width: 768px) {
+      nav {
+      margin-top: 16px;
+      }
 
       /* aturan CSS untuk viewport dengan lebar minimal 768px */
       main {
