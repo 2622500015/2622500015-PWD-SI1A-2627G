@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="style.css">
     </head>
    <body>
-     <header>
+     <header class="header">
         <h1>Registrasi</h1>
-        <nav>
+     </header>
+
+        <div class="layout">
+        <nav class="nav">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="profile.html">Profile</a></li>
             <li><a href="registrasi.html">Registrasi</a></li>
            <ul>
         </nav>
-      </header>
-      <main>
-        <section id="contact">
+     
+     <main class="konten">
+        <section id="home">
         <h2>Kontak</h2>
-        <p>Kunjungi <a href="https://github.com/2622500015">profil GitHub saya</a>.</p>
+        <p>Kunjungi <a href="profile.html">Kunjungi Profile Saya</a>.</p>
 
-        <form action="index.html" method="get">
+        <form action="registrasi.html" method="get">
           <div class="form-group">
             <label for="nama">Nama Lengkap</label><br />
             <input class="input-form" type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" minlength="3" maxlength="50" required />
@@ -34,43 +37,43 @@
           </div>
 
           <div class="form-group">
-            <label for="semester">Semester</label><br />
-            <input class="input-form" type="number" id="semester" name="semester" min="1" max="14" required />
-          </div>
-
-          <div class="form-group">
             <label for="tanggal">Tanggal Kunjungan</label><br />
             <input class="input-form" type="date" id="tanggal" name="tanggal" required />
           </div>
 
           <div class="form-group">
-            <p>Jenis Pesan</p>
-            <label for="pertanyaan">Pertanyaan</label>
+            <label for="semester">Jumlah Kucing</label><br />
+            <input class="input-form" type="number" id="semester" name="semester" min="1" max="14" required />
+          </div>
+
+          <div class="form-group">
+            <p>Jenis Kelamin</p>
+            <label for="pertanyaan">Jantan</label>
             <input type="radio" id="pertanyaan" name="jenis_pesan" value="pertanyaan" required />
-            <label for="saran">Saran</label>
+            <label for="saran">Betina</label>
             <input type="radio" id="saran" name="jenis_pesan" value="saran" />
           </div>
 
           <div class="form-group">
-            <p>Topik yang Diminati</p>
-            <label for="minat-html">HTML</label>
+            <p>Tujuan</p>
+            <label for="minat-html">Adopsi</label>
             <input type="checkbox" id="minat-html" name="minat" value="HTML" />
-            <label for="minat-css">CSS</label>
+            <label for="minat-css">Penitipan</label>
             <input type="checkbox" id="minat-css" name="minat" value="CSS" />
           </div>
 
           <div class="form-group">
-           <label for="prodi">Program Studi</label><br />
+           <label for="prodi">Buat Janji</label><br />
            <select class="input-form" id="prodi" name="prodi" required>
-            <option value="">-- Pilih Program Studi --</option>
-            <option value="SI">Sistem Informasi</option>
-            <option value="TI">Teknik Informatika</option>
-            <option value="BD">Bisnis Digital</option>
+            <option value="">-- Jadwal yang Tersedia --</option>
+            <option value="SI">Pagi, 09:00-12:00</option>
+            <option value="TI">Sore, 13:00-17:00</option>
+            <option value="BD">Malam, 18:00-21:00</option>
            </select>
           </div>
 
           <div class="form-group">
-            <label for="pesan">Pesan</label><br />
+            <label for="pesan">Catatan untuk Kami</label><br />
             <textarea class="input-form" id="pesan" name="pesan" maxlength="300" placeholder="Tulis pesan Anda" required></textarea>
           </div>
 
@@ -79,7 +82,10 @@
         </form>
       </section>
       </main>
-      <footer>
+      </div>
+
+
+      <footer class="footer">
         <p>&copy; 2622500015_Muhammad Nabil Farhan Hariry_SI1A_UTS Pemrograman Web Dasar</p>
       </footer>
     <hr>
