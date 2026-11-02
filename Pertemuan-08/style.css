@@ -178,12 +178,14 @@
       /* aturan CSS untuk viewport dengan lebar minimal 768px */
       main {
       grid-template-columns: 1fr 1fr;
+      grid-column: 1 / -1;
       }
       
       nav ul {
       flex-direction: row;
       justify-content: flex-start;
       gap: 16px;
+      grid-column: 1 / -1;
       }
 
       #home {
