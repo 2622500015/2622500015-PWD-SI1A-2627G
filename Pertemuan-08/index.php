@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿<?php
+$namaMahasiswa = "Muhammad Nabil Farhan Hariry";
+$nim = "2622500015";
+$programStudi = "Sistem Informasi";
+$ttl = "Pangkalpinang, 17 Maret 2005";
+$agama = "Islam";
+$alamat = "Jl. Mayor Busni A. Rachman";
+const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
+?>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -31,13 +40,13 @@
         <img src="./food3.png" alt="Gambar Petshop" width="300">
         <p>Makanan Kucing Snack</p>
         <img src="./apc.png" alt="Gambar Petshop" width="300">
-        <p><a href="registrasi.html">Adopsi & Penitipan Kucing</a></p>
+        <p><a href="registrasi.php">Adopsi & Penitipan Kucing</a></p>
       </main>
       </section>
       </div>
       
       <footer class="footer">
-        <p>&copy; 2622500015_Muhammad Nabil Farhan Hariry_SI1A_UTS Pemrograman Web Dasar</p>
+        <p>&copy; <strong><?php echo $nim; ?></strong>_<strong><?php echo $namaMahasiswa; ?></strong>_SI1A_UTS_<strong><?php echo $programStudi; ?></strong></p>
       </footer>
     <hr>
     <a href="../">Kembali ke Halaman Utama</a>

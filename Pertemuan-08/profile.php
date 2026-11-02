@@ -1,3 +1,12 @@
+<?php
+$namaMahasiswa = "Muhammad Nabil Farhan Hariry";
+$nim = "2622500015";
+$programStudi = "Sistem Informasi";
+$ttl = "Pangkalpinang, 17 Maret 2005";
+$agama = "Islam";
+$alamat = "Jl. Mayor Busni A. Rachman";
+const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -24,18 +33,18 @@
       <main class="konten">
         <section id="home2">
         <img src="../foto.jpeg" alt="Foto Profil Muhammad Nabil Farhan Hariry" width="200">
-        <p>Nama: Muhammad Nabil Farhan Hariry</p>
-        <p>NIM: 2622500015</p>
-        <p>Program Studi: Sistem Informasi</p>
-        <p>Tempat, Tanggal Lahir: Pangkalpinang, 17 Maret 2005</p>
-        <p>Agama: Islam</p>
-        <p>Alamat: Jl. Mayor Busni A. Rachman</p>
+        <p>Nama:<strong><?php echo $namaMahasiswa; ?></strong></p>
+        <p>NIM: <strong><?php echo $nim; ?></strong></p>
+        <p>Program Studi: <strong><?php echo $programStudi; ?></strong></p>
+        <p>Tempat, Tanggal Lahir: <strong><?php echo $ttl; ?></strong></p>
+        <p>Agama: <strong><?php echo $agama; ?><strong></p>
+        <p>Alamat: <strong><?php echo $alamat; ?></strong></p>
         </section>
       </main>
       </div>
 
       <footer class="footer">
-        <p>&copy; 2622500015_Muhammad Nabil Farhan Hariry_SI1A_UTS Pemrograman Web Dasar</p>
+        <p>&copy; <strong><?php echo $nim; ?></strong>_<strong><?php echo $namaMahasiswa; ?></strong>_SI1A_UTS_<strong><?php print NAMA_MATA_KULIAH; ?></strong></p>
       </footer>
     <hr>
     <a href="../">Kembali ke Halaman Utama</a>
