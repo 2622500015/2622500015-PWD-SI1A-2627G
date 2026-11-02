@@ -25,7 +25,7 @@
         <h2>Kontak</h2>
         <p>Kunjungi <a href="profile.html">Kunjungi Profile Saya</a>.</p>
 
-        <form action="registrasi.html" method="get">
+        <form id="regisForm" action="registrasi.html" method="get" novalidate>
           <div class="form-group">
             <label for="nama">Nama Lengkap</label><br />
             <input class="input-form" type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" minlength="3" maxlength="50" required />
@@ -42,49 +42,49 @@
           </div>
 
           <div class="form-group">
-            <label for="semester">Jumlah Kucing</label><br />
-            <input class="input-form" type="number" id="semester" name="semester" min="1" max="14" required />
+            <label for="jumlah">Jumlah Kucing</label><br />
+            <input class="input-form" type="number" id="jumlah" name="jumlah" min="1" max="10" required />
           </div>
 
           <div class="form-group">
             <p>Jenis Kelamin</p>
-            <label for="pertanyaan">Jantan</label>
-            <input type="radio" id="pertanyaan" name="jenis_pesan" value="pertanyaan" required />
-            <label for="saran">Betina</label>
-            <input type="radio" id="saran" name="jenis_pesan" value="saran" />
+            <label for="jantan">Jantan</label>
+            <input type="radio" id="jantan" name="jenis" value="jantan" required />
+            <label for="betina">Betina</label>
+            <input type="radio" id="betina" name="jenis" value="betina" />
           </div>
 
           <div class="form-group">
             <p>Tujuan</p>
-            <label for="minat-html">Adopsi</label>
-            <input type="checkbox" id="minat-html" name="minat" value="HTML" />
-            <label for="minat-css">Penitipan</label>
-            <input type="checkbox" id="minat-css" name="minat" value="CSS" />
+            <label for="adopsi">Adopsi</label>
+            <input type="checkbox" id="adopsi" name="tujuan" value="Adopsi" />
+            <label for="penitipan">Penitipan</label>
+            <input type="checkbox" id="penitipan" name="tujuan" value="Penitipan" />
           </div>
 
           <div class="form-group">
-           <label for="prodi">Buat Janji</label><br />
-           <select class="input-form" id="prodi" name="prodi" required>
+           <label for="janji">Buat Janji</label><br />
+           <select class="input-form" id="janji" name="janji" required>
             <option value="">-- Jadwal yang Tersedia --</option>
-            <option value="SI">Pagi, 09:00-12:00</option>
-            <option value="TI">Sore, 13:00-17:00</option>
-            <option value="BD">Malam, 18:00-21:00</option>
+            <option value="PG">Pagi, 09:00-12:00</option>
+            <option value="SR">Sore, 13:00-17:00</option>
+            <option value="ML">Malam, 18:00-21:00</option>
            </select>
           </div>
 
           <div class="form-group">
-            <label for="pesan">Catatan untuk Kami</label><br />
+            <label for="pesan">Pesan untuk Kami</label><br />
             <textarea class="input-form" id="pesan" name="pesan" maxlength="300" placeholder="Tulis pesan Anda" required></textarea>
           </div>
 
           <button type="submit">Kirim</button>
           <button type="reset">Batal</button>
+          <p id="regisFeedback"></p>
         </form>
       </section>
       </main>
       </div>
-
-
+      
       <footer class="footer">
         <p>&copy; 2622500015_Muhammad Nabil Farhan Hariry_SI1A_UTS Pemrograman Web Dasar</p>
       </footer>

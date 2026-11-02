@@ -69,10 +69,6 @@
     grid-column: 1 / -1;
     }
 
-    #home p {
-    color: #ffffff;
-    }
-
     #home2 p {
     color: #ffffff;
     font-weight: bold;
@@ -171,6 +167,14 @@
     padding: 15px;
     border: 3px solid black;
     border-top: none;
+    }
+
+    .regis-Feedback-error {
+    color: #c62828;
+    }
+
+    .regis-Feedback-success {
+    color: #2e7d32;
     }
 
     @media (min-width: 768px) {
