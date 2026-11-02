@@ -18,6 +18,18 @@
     background-image: url('back.png');
     }
 
+    .logo {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid #ffffff;
+    position: absolute;
+    left: 25px;
+    top: 0.5%;
+    }
+
     .layout {
     display: flex;
     flex: 1;
