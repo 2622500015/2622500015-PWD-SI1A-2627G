@@ -15,9 +15,9 @@
         <div class="layout">
         <nav class="nav">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="registrasi.html">Registrasi</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="registrasi.php">Registrasi</a></li>
            <ul>
         </nav>
      
