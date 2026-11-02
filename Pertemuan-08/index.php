@@ -33,6 +33,7 @@ const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
       <main class="konten">
         <section id="home3">
         <h1>Selamat datang di Hariry Catshop</h1>
+        <p>Menjual berbagai macam makanan kucing dan Menyediakan jasa penitipan dan adopsi Kucing</p>
         <img src="./food1.png" alt="Gambar Petshop" width="300">
         <p>Makanan Kucing Kering</p>
         <img src="./food2.png" alt="Gambar Petshop" width="300">
