@@ -173,3 +173,21 @@
     border-top: none;
     }
 
+    @media (min-width: 768px) {
+
+      /* aturan CSS untuk viewport dengan lebar minimal 768px */
+      main {
+      grid-template-columns: 1fr 1fr;
+      }
+      
+      nav ul {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 16px;
+      }
+
+      #home {
+      grid-column: 1 / -1;  
+      }
+    }
+
