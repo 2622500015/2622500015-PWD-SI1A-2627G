@@ -45,7 +45,7 @@ regisFeedback.textContent = "Pilih jenis kelamin.";
 return;
 }
 
-const tujuan = document.querySelectorAll('input[name="tujuan"]:checked');
+const tujuan = document.querySelectorAll('input[name="tujuan"]:checked, input[name="tujuan[]"]:checked');
 if (tujuan.length === 0) {
 regisFeedback.textContent = "Pilih minimal satu tujuan.";
 return;
@@ -70,6 +70,7 @@ return;
 
 regisFeedback.textContent = "Registrasi berhasil dikirim.";
 regisFeedback.className = "regis-Feedback-success";
+regisForm.submit();
 });
 
 regisForm.addEventListener("reset", () => {

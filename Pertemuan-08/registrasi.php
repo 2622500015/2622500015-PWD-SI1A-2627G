@@ -1,4 +1,97 @@
 <?php
+session_start();
+
+if (isset($_POST['nama'])) {
+$nama = trim((string) ($_POST['nama'] ?? ''));
+}
+
+$email = trim((string) ($_POST['email'] ?? ''));
+$jumlah = trim((string) ($_POST['jumlah'] ?? ''));
+$tanggal = trim((string) ($_POST['tanggal'] ?? ''));
+$jenis = trim((string) ($_POST['jenis'] ?? ''));
+$janji = trim((string) ($_POST['janji'] ?? ''));
+$pesan = trim((string) ($_POST['pesan'] ?? ''));
+$tujuan = $_POST['tujuan'] ?? [];
+
+$pesanKesalahan = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (trim($nama ?? '') === '') {
+$pesanKesalahan .= 'Nama lengkap wajib diisi. ';
+}
+
+if (trim($email) === '') {
+$pesanKesalahan .= 'Email wajib diisi. ';
+}
+
+if (trim($tanggal) === '') {
+$pesanKesalahan .= 'Tanggal kunjungan wajib diisi. ';
+}
+
+if (trim($jumlah) === '') {
+$pesanKesalahan .= 'Jumlah wajib diisi. ';
+}
+
+if ($jenis === '') {
+$pesanKesalahan .= 'Jenis wajib dipilih. ';
+}
+
+if (empty($tujuan)) {
+$pesanKesalahan .= 'Tujuan wajib dipilih minimal satu. ';
+}
+
+if ($janji === '') {
+$pesanKesalahan .= 'Jadwal janji wajib dipilih. ';
+}
+
+if (trim($pesan) === '') {
+$pesanKesalahan .= 'Pesan wajib diisi. ';
+}
+
+if (trim($jumlah) !== '') {
+$jumlahValid = filter_var(
+$jumlahform,
+FILTER_VALIDATE_INT
+);
+
+if (
+$jumlahValid === false ||
+$jumlahValid < 1 ||
+$jumlahValid > 10
+) {
+$pesanKesalahan .= '';
+}
+}
+if (trim($email) !== '') {
+if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+$pesanKesalahan .= 'Format email tidak valid. ';
+}
+}
+
+if (!in_array($jenis, ['jantan', 'betina'], true)) {
+$pesanKesalahan .= 'Jenis kelamin tidak valid. ';
+}
+
+if (!in_array($janji, ['PG', 'SR', 'ML'], true)) {
+$pesanKesalahan .= 'Jadwal janji tidak valid. ';
+}
+
+$tujuanDiizinkan = ['Adopsi', 'Penitipan'];
+if (!is_array($tujuan)) {
+$pesanKesalahan .= 'Tujuan tidak valid. ';
+} else {
+foreach ($tujuan as $topik) {
+if (!in_array($topik, $tujuanDiizinkan, true)) {
+$pesanKesalahan .= 'Pilihan tujuan tidak valid. ';
+break;
+}
+}
+}
+}
+
+
+
+
 $namaMahasiswa = "Muhammad Nabil Farhan Hariry";
 $nim = "2622500015";
 $programStudi = "Sistem Informasi";
@@ -6,6 +99,32 @@ $ttl = "Pangkalpinang, 17 Maret 2005";
 $agama = "Islam";
 $alamat = "Jl. Mayor Busni A. Rachman";
 const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$_SESSION['pesanKesalahan'] = $pesanKesalahan;
+$_SESSION['nama'] = $nama;
+$_SESSION['email'] = $email;
+$_SESSION['tanggal'] = $tanggal;
+$_SESSION['jumlah'] = $jumlah;
+$_SESSION['jenis'] = $jenis;
+$_SESSION['tujuan'] = $tujuan;
+$_SESSION['janji'] = $janji;
+$_SESSION['pesan'] = $pesan;
+header('Location: registrasi.php');
+exit;
+}
+
+$pesanKesalahan = $_SESSION['pesanKesalahan'] ?? '';
+
+$nama = $_SESSION['nama'] ?? '';
+$email = $_SESSION['email'] ?? '';
+$tanggal = $_SESSION['tanggal'] ?? date("Y-m-d");
+$jumlah = $_SESSION['jumlah'] ?? '' ;
+$jenis = $_SESSION['jenis'] ?? '';
+$tujuan = $_SESSION['tujuan'] ?? '';
+$janji = $_SESSION['janji'] ?? '';
+$pesan = $_SESSION['pesan'] ?? '';
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -33,9 +152,14 @@ const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
      <main class="konten">
         <section id="home">
         <h2>Kontak</h2>
-        <p>Kunjungi <a href="profile.html">Kunjungi Profile Saya</a>.</p>
+        <?php if ($pesanKesalahan !== ''): ?>
+        <p class="form-feedback-error">
+        <?= htmlspecialchars($pesanKesalahan, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+        <?php endif; ?>
+        <p>Kunjungi <a href="profile.php">Kunjungi Profile Saya</a>.</p>
 
-        <form id="regisForm" action="registrasi.html" method="get" novalidate>
+        <form id="regisForm" action="registrasi.php" method="post" novalidate>
           <div class="form-group">
             <label for="nama">Nama Lengkap</label><br />
             <input class="input-form" type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" minlength="3" maxlength="50" required />
@@ -67,9 +191,9 @@ const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
           <div class="form-group">
             <p>Tujuan</p>
             <label for="adopsi">Adopsi</label>
-            <input type="checkbox" id="adopsi" name="tujuan" value="Adopsi" />
+            <input type="checkbox" id="adopsi" name="tujuan[]" value="Adopsi" />
             <label for="penitipan">Penitipan</label>
-            <input type="checkbox" id="penitipan" name="tujuan" value="Penitipan" />
+            <input type="checkbox" id="penitipan" name="tujuan[]" value="Penitipan" />
           </div>
 
           <div class="form-group">
@@ -91,6 +215,41 @@ const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
           <button type="reset">Batal</button>
           <p id="regisFeedback"></p>
         </form>
+        <?php if (!empty($nama)): ?>
+        <h3>Data yang Diterima Peladen</h3>
+        <p>Nama:
+          <?= htmlspecialchars($nama, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+        <p>Email:
+        <?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+        <p>Tanggal kunjungan:
+        <?= htmlspecialchars($tanggal, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+        <p>Jumlah Kucing:
+          <?= htmlspecialchars($jumlah, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+        <p>Jenis Kelamin:
+          <?= htmlspecialchars($jenis, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+        <p>Tujuan:</p>
+          <?php if (is_array($tujuan) && count($tujuan) > 0): ?>
+        <ul>
+          <?php foreach ($tujuan as $topik): ?>
+        <li>
+          <?= htmlspecialchars((string) $topik, ENT_QUOTES, 'UTF-8') ?>
+        </li>
+          <?php endforeach; ?>
+        </ul>
+          <?php else: ?>
+        <p>Tidak ada tujuan yang dipilih.</p>
+          <?php endif; ?>
+        <p>Jadwal Janji:
+          <?= htmlspecialchars($janji, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+        <p>Pesan:</p>
+        <p><?= nl2br(htmlspecialchars($pesan, ENT_QUOTES, 'UTF-8')) ?></p>
+        <?php endif; ?>
       </section>
       </main>
       </div>
