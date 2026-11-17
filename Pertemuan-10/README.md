@@ -9,7 +9,7 @@ Pada pertemuan ke.
 ### Materi yang dibahas:
 1. **.**
 ### Tujuan Pembelajaran
-- ..
+- .
 
 ## Link
 - Akun GitHub: https://github.com/2622500015
