@@ -50,7 +50,7 @@ $pesanKesalahan .= 'Pesan wajib diisi. ';
 
 if (trim($jumlah) !== '') {
 $jumlahValid = filter_var(
-$jumlahform,
+$jumlahform
 FILTER_VALIDATE_INT
 );
 
@@ -62,6 +62,7 @@ $jumlahValid > 10
 $pesanKesalahan .= '';
 }
 }
+
 if (trim($email) !== '') {
 if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 $pesanKesalahan .= 'Format email tidak valid. ';
