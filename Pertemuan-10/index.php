@@ -284,7 +284,7 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
                   <p>Belum ada topik yang dipilih.</p>
                 <?php endif; ?>
 
-                <p><strong>Pesan:</strong> <?= n12br(bersihkan($_SESSION["form_data"]["pesan"])); ?></p>
+                <p><strong>Pesan:</strong> <?= nl2br(bersihkan($_SESSION["form_data"]["pesan"])); ?></p>
               </article>
               <?php endif; ?>
               </section>
