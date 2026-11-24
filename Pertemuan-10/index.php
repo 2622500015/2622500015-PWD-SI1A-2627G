@@ -252,7 +252,7 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
         </form>
 
         <?php if (isset($_SESSION["form_data"])): ?>
-<         <?php
+          <?php
           $labelMap = [
             "nama" => "Nama Lengkap",
             "email" => "Email",
