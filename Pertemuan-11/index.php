@@ -282,7 +282,7 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
         ?>
         
         <article id="hasilKontak" class="submission-result" aria-live="polite">
-            <h3>Data Formulir yang Dikirim</h3>
+            <h3>Data Kontak dari Basis Data</h3>
             <?php if (count($dataKontak) > 0): ?>
             <?php foreach ($dataKontak as $data): ?>
             <section>
@@ -298,11 +298,11 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
             </section>
           <?php endforeach; ?>
          <?php else: ?>
-          <p>Belum ada data kontak yang tersimpan.</p>
+          <p>Belum ada Data kontak yang tersimpan.</p>
          <?php endif; ?>
         </section>
 
-        <?php if (isset($_SESSION["form_data"])); ?>
+        <?php if (isset($_SESSION["form_data"])): ?>
             
             <?php foreach ($labelMap as $key => $label): ?>
                 <p><strong><?= bersihkan($label); ?>:</strong> <?= bersihkan($_SESSION["form_data"][$key]); ?></p>
