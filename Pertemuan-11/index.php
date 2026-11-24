@@ -17,6 +17,10 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
     $dataKontak[] = $baris;
 }
 
+echo "<pre>";
+var_dump($dataKontak);
+echo "</pre>";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $nama = trim((string) ($_POST["nama"] ?? "")); 
 $email = trim((string) ($_POST["email"] ?? "")); 
