@@ -1,11 +1,8 @@
 ﻿<?php
-
 require_once("fungsi.php");
-
 require_once("koneksi.php");
 
 $sql = "SELECT * FROM tbl_kontak_2622500015";
-
 $hasil = mysqli_query($koneksi, $sql);
 
 if (!$hasil) {
@@ -17,9 +14,9 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
     $dataKontak[] = $baris;
 }
 
-echo "<pre>";
+/* echo "<pre>";
 var_dump($dataKontak);
-echo "</pre>";
+echo "</pre>"; */
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $nama = trim((string) ($_POST["nama"] ?? "")); 
@@ -300,9 +297,10 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
          <?php else: ?>
           <p>Belum ada Data kontak yang tersimpan.</p>
          <?php endif; ?>
+         </article>
         </section>
 
-        <?php if (isset($_SESSION["form_data"])): ?>
+        <?php if (isset($_SESSION["form_data"])); ?>
             
             <?php foreach ($labelMap as $key => $label): ?>
                 <p><strong><?= bersihkan($label); ?>:</strong> <?= bersihkan($_SESSION["form_data"][$key]); ?></p>
@@ -326,7 +324,7 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
                 <p><strong>Pesan:</strong> <?= nl2br(bersihkan($_SESSION["form_data"]["pesan"])); ?></p>
               </article>
               <?php endif; ?>
-              </section>
+              
               </main>
         
     <footer>
