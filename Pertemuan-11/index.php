@@ -12,6 +12,11 @@ if (!$hasil) {
     die("Kueri SELECT gagal dijalankan.");
 }
 
+$dataKontak = [];
+while ($baris = mysqli_fetch_assoc($hasil)) {
+    $dataKontak[] = $baris;
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $nama = trim((string) ($_POST["nama"] ?? "")); 
 $email = trim((string) ($_POST["email"] ?? "")); 
